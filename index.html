@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link href="src/css/style.css" rel="stylesheet" type="text/css">
+    <title>The Book of Our People</title>
+
+    <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="extras/jquery-ui-1.8.20.custom.min.js"></script>
+    <script type="text/javascript" src="extras/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+    <script type="text/javascript" src="lib/hash.js"></script>
   </head>
+  
   <body>
-    <h1>Mozilla is cool</h1>
-    <img src="media/pics/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
 
-    <p>At Mozilla, we’re a global community of</p>
+  <div id="canvas">
+    <div id="book-zoom">
+      <div class="book">
+        <div ignore="1" class="tabs"><div class="left">  </div> <div class="right"> </div></div>
+        <div class="hard"></div>
+        <div class="hard"></div>
+        <div class="hard p29"></div>
+        <div class="hard p30"></div>
+      </div>
+  </div>
+  <div id="slider-bar" class="turnjs-slider">
+    <div id="slider"></div>
+  </div>
+  </div>
 
-    <ul> <!-- changed to list in the tutorial -->
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
 
-    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
-
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> to learn even more about the values and principles that guide the pursuit of our mission.</p>
-  <button>Change user</button>
-  <script src="src/js/main.js"></script>
+  <script type="text/javascript" src="src/js/main.js"></script>
   </body>
 </html>
