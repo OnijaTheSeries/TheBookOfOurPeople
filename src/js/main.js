@@ -10,37 +10,6 @@ function loadApp() {
     return;
   }
 
-
-  // Slider
-
-  $( "#slider" ).slider({
-    min: 1,
-    max: 100,
-
-    start: function(event, ui) {
-      if (!window._thumbPreview) {
-        _thumbPreview = $('<div />', {'class': 'thumbnail'}).html('<div></div>');
-        setPreview(ui.value);
-        _thumbPreview.appendTo($(ui.handle));
-      } else
-        setPreview(ui.value);
-
-      moveBar(false);
-    },
-
-    slide: function(event, ui) {
-      setPreview(ui.value);
-    },
-
-    stop: function() {
-      if (window._thumbPreview)
-        _thumbPreview.removeClass('show');
-      
-      $('.book').turn('page', Math.max(1, $(this).slider('value')*2 - 2));
-    }
-  });
-
-
   // URIs
   
   Hash.on('^page\/([0-9]*)$', {
@@ -128,15 +97,12 @@ function loadApp() {
           $('.book .p2').removeClass('fixed');
 
       if (page<book.turn('pages'))
-          $('.book .p111').addClass('fixed');
+          $('.book .p9').addClass('fixed');
       else
-          $('.book .p111').removeClass('fixed');
+          $('.book .p9').removeClass('fixed');
 
       Hash.go('page/'+page).update();
-
-      if (page==1 || page==pages)
-        $('.book .tabs').hide();
-      
+     
 
     },
 
@@ -144,23 +110,13 @@ function loadApp() {
 
       var book = $(this);
 
-      $('#slider').slider('value', getViewNumber(book, page));
-
-      if (page!=1 && page!=book.turn('pages'))
-        $('.book .tabs').fadeIn(500);
-      else
-        $('.book .tabs').hide();
+      if (page==2 || page==3) {
+          book.turn('peel', 'br');
+        }
 
       updateDepth(book);
 
       book.turn('center');
-      updateTabs();
-
-    },
-
-    start: function(e, pageObj) {
-  
-      moveBar(true);
 
     },
 
@@ -169,12 +125,6 @@ function loadApp() {
       var book = $(this);
 
       updateDepth(book);
-
-      setTimeout(function() {
-        $('#slider').slider('value', getViewNumber(book));
-      }, 1);
-
-      moveBar(false);
 
     },
 
@@ -185,17 +135,14 @@ function loadApp() {
 
     }
   }
-  }). turn('page', 2);
-
-
-  $('#slider').slider('option', 'max', numberOfViews(flipbook));
+  });
 
   flipbook.addClass('animated');
 
 
   // Show canvas
 
-  $('#canvas').css({visibility: 'visible'});
+  $('#canvas').css({visibility: ''});
 }
 
 // Hide canvas
@@ -204,8 +151,8 @@ $('#canvas').css({visibility: 'hidden'});
 
 yepnope({
   test: Modernizr.csstransforms,
-  yep: ['lib/turn.min.js'],
-  nope: ['lib/turn.html4.min.js', 'src/css/jquery.ui.html4.css'],
-  both: ['src/css/docs.css', 'src/js/docs.js', 'src/css/jquery.ui.css'],
+  yep: ['lib/turn.min.js', 'src/css/jquery.ui.css'],
+  nope: ['lib/turn.html4.min.js'],
+  both: ['src/css/docs.css', 'src/js/docs.js'],
   complete: loadApp
 });

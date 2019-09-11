@@ -1,25 +1,10 @@
 
 /* The Book Of Our People */
 
-@font-face {
-  font-family: 'Stempel-Garamond-W01-Roman';
-  font-style: normal;
-  font-weight: normal;
-  src: url('media/fonts/Stempel-Garamond-W01-Roman.woff') format('woff');
-}
-
-body, ul, table, form{
+body{
 	margin:0;
 	padding:0;
 	overflow:hidden;
-}
-
-.animated{
-	-webkit-transition:margin-left 0.2s ease-in-out;
-	-moz-transition:margin-left 0.2s ease-in-out;
-	-o-transition:margin-left 0.2s ease-in-out;
-	-ms-transition:margin-left 0.2s ease-in-out;
-	transition:margin-left 0.2s ease-in-out;
 }
 
 #canvas{
@@ -28,81 +13,6 @@ body, ul, table, form{
 	margin: 100px auto;
 }
 
-.book{
-	width:960px;
-	height:600px;
-}
-
-.book h1{
-	font-family: "Stempel-Garamond-W01-Roman";
-	font-size: 38px;
-	font-weight: lighter;
-	margin: 20px 0;
-	color: #333;
-	-webkit-text-fill-color: #333;
-	-webkit-text-stroke-color: white;
-	-webkit-text-stroke-width: 0.005em;
-}
-
-.book h2{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:#444;
-    font-size:16px;
-	letter-spacing:2px;
-	font-weight: 400;
-}
-
-.book .book-content{
-	font-family: "Stempel-Garamond-W01-Roman";
-	font-size:16px;
-	margin:70px 40px;
-}
-
-.book blockquote{
-	color:#586078;
-	margin:10px 0;
-	font-style:italic;
-}
-
-.book blockquote:before{
-	content: "\201C";
-	color:#333D53;
-	font-size:20px;
-}
-
-.book blockquote:after{
-	content: "\201D";
-	color:#333D53;
-	font-size:20px;
-}
-
-.book cite{
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:13px;
-	font-weight:200;
-	font-style:normal;
-	color:#666;
-}
-
-.book .book-content .center-pic{
-	margin:0;
-	text-indent:0;
-	text-align:center;
-}
-
-.book .book-content p{
-	text-indent: 18px;
-	margin: 20px 0;
-	line-height: 22px;
-}
-
-.book .left-pic{
-	float:left;
-	margin-top:15px;
-	margin-right:15px;
-	margin-bottom:15px;
-}
-
 .animated{
 	-webkit-transition:margin-left 0.2s ease-in-out;
 	-moz-transition:margin-left 0.2s ease-in-out;
@@ -111,17 +21,22 @@ body, ul, table, form{
 	transition:margin-left 0.2s ease-in-out;
 }
 
-.book .shadow{
+.sample-docs .shadow{
 	-webkit-transition: -webkit-box-shadow 0.5s;
 	-moz-transition: -moz-box-shadow 0.5s;
 	-o-transition: -webkit-box-shadow 0.5s;
 	-ms-transition: -ms-box-shadow 0.5s;
 
-	-webkit-box-shadow:0 0 10px #999;
-	-moz-box-shadow:0 0 10px #999;
-	-ms-box-shadow:0 0 10px #999;
-	-o-box-shadow:0 0 10px #999;
-	box-shadow:0 0 10px #999;
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}
+
+.book{
+	width:960px;
+	height:600px;
 }
 
 .book .page{
@@ -264,71 +179,6 @@ body, ul, table, form{
 	left:219px;
 }
 
-.book .page-number{
-	color:#999;
-	width:100%;
-	bottom:25px;
-	position:absolute;
-	display:block;
-	text-align: center;
-	line-height:30px;
-	font-size:11px;
-}
-
-.book .table-contents{
-	font-size:16px;
-	width:300px;
-	margin:80px auto;
-	color:#ccc;
-}
-
-.book .table-contents li{
-	list-style:none;
-	line-height:25px;
-}
-
-.book .table-contents span{
-	float:right;
-}
-
-.book .table-contents a{
-	float:left;
-	width:100%;
-	clear:both;
-	text-decoration:none;
-	color:#333;
-	margin:2px 0;
-	padding:0 10px;
-}
-
-.book .table-contents a:hover{
-	background:#CAD1EE;
-	float:left;
-	width:100%;
-	clear:both;
-	text-decoration:none;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	-o-border-radius:10px;
-	-ms-border-radius:10px;
-	border-radius:10px;
-}
-
-.book .book-content .capital,
-.book .book-content .no-indent{
-	text-indent: 0;
-}
-
-.book .capital:first-letter {
-    display:block;
-    float:left;
-    font-size: 300%;
-    line-height: 70%;
-	margin-right: 6px;
-	margin-top: 7px;
-	margin-left:18px;
-}
-
 .ie8 .book .even,
 .ie9 .book .even{
 	background-image:url(../../media/pics/gradient-page-left.jpg);
@@ -342,4 +192,3 @@ body, ul, table, form{
 	background-position:left top;
 	background-repeat:repeat-y;
 }
-
