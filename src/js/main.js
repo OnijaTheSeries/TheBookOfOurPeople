@@ -89,7 +89,7 @@ function loadApp() {
     gradients: true,
     autoCenter: true,
     duration: 1000,
-    pages: 112,
+    pages: 10,
     when: {
 
     turning: function(e, page, view) {
