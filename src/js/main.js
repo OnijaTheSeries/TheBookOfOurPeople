@@ -118,13 +118,15 @@ function loadApp() {
 
   // Create the flipbook
 
+  flipbook.bind(($.isTouch) ? 'touchend' : 'click', zoomHandle);
+
   flipbook.turn({
     elevation: 50,
     acceleration: false,
     gradients: true,
     autoCenter: true,
     duration: 1000,
-    pages: 30,
+    pages: 112,
     when: {
 
     turning: function(e, page, view) {
@@ -155,6 +157,18 @@ function loadApp() {
         }
       }
 
+      updateDepth(book, page);
+
+      if (page>=2)
+          $('.book .p2').addClass('fixed');
+      else
+          $('.book .p2').removeClass('fixed');
+
+      if (page<book.turn('pages'))
+          $('.book .p111').addClass('fixed');
+      else
+          $('.book .p111').removeClass('fixed');
+
       Hash.go('page/'+page).update();
 
       if (page==1 || page==pages)
@@ -174,6 +188,8 @@ function loadApp() {
       else
         $('.book .tabs').hide();
 
+      updateDepth(book);
+
       book.turn('center');
       updateTabs();
 
@@ -188,6 +204,8 @@ function loadApp() {
     end: function(e, pageObj) {
     
       var book = $(this);
+
+      updateDepth(book);
 
       setTimeout(function() {
         $('#slider').slider('value', getViewNumber(book));
@@ -223,8 +241,8 @@ $('#canvas').css({visibility: 'hidden'});
 
 yepnope({
   test: Modernizr.csstransforms,
-  yep: ['lib/turn.min.js', 'src/css/jquery.ui.css'],
+  yep: ['lib/turn.min.js'],
   nope: ['lib/turn.html4.min.js', 'src/css/jquery.ui.html4.css'],
-  both: ['src/css/docs.css', 'src/js/docs.js'],
+  both: ['src/css/docs.css', 'src/js/docs.js', 'src/css/jquery.ui.css'],
   complete: loadApp
 });
