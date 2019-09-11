@@ -28,14 +28,6 @@ body, ul, table, form{
 	margin: 100px auto;
 }
 
-#book-zoom{
-	-webkit-transition: -webkit-transform 1s;
-	-moz-transition: -moz-transform 1s;
-	-ms-transition: -ms-transform 1s;
-	-o-transition: -o-transform 1s;
-	transition: transform 1s;
-}
-
 .book{
 	width:960px;
 	height:600px;
@@ -98,11 +90,6 @@ body, ul, table, form{
 	text-align:center;
 }
 
-.book .zoom-this:hover{
-	opacity:0.9;
-	cursor:pointer;
-}
-
 .book .book-content p{
 	text-indent: 18px;
 	margin: 20px 0;
@@ -143,24 +130,6 @@ body, ul, table, form{
 	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	box-shadow:0 0 20px rgba(0,0,0,0.2);
-}
-
-.zoom-pic{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background-color:rgba(0,0,0,0.2);
-	z-index:999;
-}
-
-.zoom-pic img{
-	-webkit-box-shadow:0 0 20px #999;
-	-moz-box-shadow:0 0 20px #999;
-	-o-box-shadow:0 0 20px #999;
-	-ms-box-shadow:0 0 20px #999;
-	box-shadow:0 0 20px #999;
 }
 
 .book .p1,

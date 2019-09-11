@@ -10,41 +10,6 @@ function loadApp() {
     return;
   }
 
-  // Mousewheel
-
-  $('#book-zoom').mousewheel(function(event, delta, deltaX, deltaY) {
-
-    var data = $(this).data(),
-      step = 30,
-      flipbook = $('.book'),
-      actualPos = $('#slider').slider('value')*step;
-
-    if (typeof(data.scrollX)==='undefined') {
-      data.scrollX = actualPos;
-      data.scrollPage = flipbook.turn('page');
-    }
-
-    data.scrollX = Math.min($( "#slider" ).slider('option', 'max')*step,
-      Math.max(0, data.scrollX + deltaX));
-
-    var actualView = Math.round(data.scrollX/step),
-      page = Math.min(flipbook.turn('pages'), Math.max(1, actualView*2 - 2));
-
-    if ($.inArray(data.scrollPage, flipbook.turn('view', page))==-1) {
-      data.scrollPage = page;
-      flipbook.turn('page', page);
-    }
-
-    if (data.scrollTimer)
-      clearInterval(data.scrollTimer);
-    
-    data.scrollTimer = setTimeout(function(){
-      data.scrollX = undefined;
-      data.scrollPage = undefined;
-      data.scrollTimer = undefined;
-    }, 1000);
-
-  });
 
   // Slider
 
@@ -117,8 +82,6 @@ function loadApp() {
   });
 
   // Create the flipbook
-
-  flipbook.bind(($.isTouch) ? 'touchend' : 'click', zoomHandle);
 
   flipbook.turn({
     elevation: 50,
