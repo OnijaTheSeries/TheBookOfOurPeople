@@ -8,8 +8,8 @@ body{
 }
 
 #canvas{
-	width: 880px;
-	height: 550px;
+	width: 960px;
+	height: 600px;
 	margin: 30px auto;
 
 	-webkit-transition: -webkit-transform 1s;
@@ -197,4 +197,17 @@ body{
 	background-image:url(../../media/pics/gradient-page-right.jpg);
 	background-position:left top;
 	background-repeat:repeat-y;
+}
+
+.insta-button {
+  position: absolute;
+  background-color: transparent;
+  border-radius: 50%;
+  background-image:url(../../media/pics/insta.png);
+  background-size: 70px 70px;
+  background-repeat:no-repeat;
+  top:550px;
+  left:60px;
+  height: 70px;
+  width: 70px;
 }

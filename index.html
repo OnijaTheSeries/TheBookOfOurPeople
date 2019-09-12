@@ -11,6 +11,15 @@
     <script type="text/javascript" src="extras/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
     <script type="text/javascript" src="lib/hash.js"></script>
+
+    <style>
+      body {
+         background-image: url(media/pics/background.jpg);
+         background-repeat:no-repeat;
+         background-size:cover;
+      } 
+    </style>
+
   </head>
   
   <body>
@@ -23,10 +32,22 @@
         <div class="hard fixed back-side p9"> <div class="depth"></div> </div>
         <div class="hard p10"></div>
       </div>
-  </div>
- 
+   </div>
+   <script type="text/javascript" src="src/js/main.js"></script>
+  
+
+   <button id="insta-coin" class="insta-button"> 
+
+      <script type="text/javascript">
+        document.getElementById("insta-coin").onclick = function () 
+        {
+            window.open('https://www.instagram.com/onijatheseries/', '_blank');
+        };
+      </script>
+
+   </button>
 
 
-  <script type="text/javascript" src="src/js/main.js"></script>
   </body>
+
 </html>
