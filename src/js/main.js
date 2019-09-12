@@ -58,7 +58,7 @@ function loadApp() {
     gradients: true,
     autoCenter: true,
     duration: 1000,
-    pages: 10,
+    pages: 12,
     when: {
 
     turning: function(e, page, view) {
@@ -97,9 +97,9 @@ function loadApp() {
           $('.book .p2').removeClass('fixed');
 
       if (page<book.turn('pages'))
-          $('.book .p9').addClass('fixed');
+          $('.book .p11').addClass('fixed');
       else
-          $('.book .p9').removeClass('fixed');
+          $('.book .p11').removeClass('fixed');
 
       Hash.go('page/'+page).update();
      

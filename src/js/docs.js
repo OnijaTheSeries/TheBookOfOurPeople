@@ -19,12 +19,12 @@ function updateDepth(book, newPage) {
 		depthWidth = 16*Math.min(1, (pages-page)*2/pages);
 
 	if (newPage<pages-4)
-		$('.book .p9 .depth').css({
+		$('.book .p11 .depth').css({
 			width: depthWidth,
 			right: 20 - depthWidth
 		});
 	else
-		$('.book .p9 .depth').css({width: 0});
+		$('.book .p11 .depth').css({width: 0});
 
 }
 
@@ -50,7 +50,7 @@ function addPage(page, book) {
 				css: {width: 460, height: 582}});
 
 	book.turn('addPage', element, page);
-	if (page<9){
+	if (page<11){
 		element.html('<div class="loader"></div>');
 		loadPage(page);
 	}
