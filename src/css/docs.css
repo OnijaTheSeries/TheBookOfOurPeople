@@ -8,9 +8,15 @@ body{
 }
 
 #canvas{
-	width: 960px;
-	height: 600px;
-	margin: 100px auto;
+	width: 880px;
+	height: 550px;
+	margin: 30px auto;
+
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-ms-transition: -ms-transform 1s;
+	-o-transition: -o-transform 1s;
+	transition: transform 1s;
 }
 
 .animated{
